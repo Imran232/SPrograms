@@ -15,7 +15,17 @@ function myfunc(event){
 }
 function showUserOnScreen(obj){
     var parentElem=document.getElementById('my-form');
-    var ChildElem=document.createElement('li');
+    var ChildElem=document.createElement('form');
     ChildElem.textContent=obj.Name+'-'+obj.Email;
+    var deleteBtn=document.createElement('input')
+    deleteBtn.type='button'
+    deleteBtn.value='Delete'
+    deleteBtn.onClick=()=>
+    {
+        localStorage.removeItem(obj.Email)
+        parentElem.removeChild(ChildElem)
+    }
+    ChildElem.appendChild(deleteBtn)
     parentElem.appendChild(ChildElem)
 }
+
