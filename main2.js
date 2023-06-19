@@ -18,6 +18,9 @@ function showUserOnScreen(obj){
     var ChildElem=document.createElement('form');
     ChildElem.textContent=obj.Name+'-'+obj.Email;
     var deleteBtn=document.createElement('input')
+    var editBtn=document.createElement('input')
+    editBtn.type='button'
+    editBtn.value='Edit'
     deleteBtn.type='button'
     deleteBtn.value='Delete'
     deleteBtn.onClick=()=>
